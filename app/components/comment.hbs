@@ -1,0 +1,11 @@
+<h3>Feel free to leave a comment</h3>
+<div id="comment-container">
+    <div class="row">
+        <div class="col-md-12">
+            <Textarea @id="comment" required @value={{this.writtenWords}} @key-up={{this.checkComment }} />
+            {{#if this.errors}}
+            <p>{{this.errors}}% likely to be toxic</p>
+            {{/if}}
+        </div>
+    </div>
+</div>

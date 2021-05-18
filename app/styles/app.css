@@ -1,0 +1,23 @@
+
+#comment-container {
+    border: 1px solid #6d2445;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 260px;
+    padding: 30px 30px 10px;
+    position: relative;
+}
+#comment {
+    background: 0 0;
+    border: 0;
+    box-sizing: border-box;
+    font-size: 26px;
+    height: 100%;
+    line-height: 34px;
+    min-height: 100px;
+    outline: 0;
+    resize: none;
+    width: 100%;
+}
