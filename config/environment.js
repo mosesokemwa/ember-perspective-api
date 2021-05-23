@@ -20,7 +20,9 @@ module.exports = function (environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-      PERSPECTIVE_API_KEY: process.env.PERSPECTIVE_API_KEY,
+    },
+    PERSPECTIVE_API_KEY: {
+      apiKey: process.env.PERSPECTIVE_API_KEY,
     },
   };
 

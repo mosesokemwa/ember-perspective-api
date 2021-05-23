@@ -6,17 +6,18 @@ import { inject } from '@ember/service';
 
 export default class CommentController extends Component {
   @tracked errors;
-  @tracked writtenWords = 'fuck ';
+  @tracked writtenWords = 'add more text ';
   @inject config;
 
   @action
-  async checkComment(text) {
+  async checkComment() {
+    const text = this.writtenWords;
     let res;
-    if (this.writtenWords.length == 0) {
-      this.errors = '';
+    if (text.length == 0) {
+      this.errors = 'Text must no be empty';
     } else {
       const perspective = new Perspective({
-        apiKey: this.config.get('PERSPECTIVE_API_KEY').PERSPECTIVE_API_KEY,
+        apiKey: this.config.get('PERSPECTIVE_API_KEY').apiKey,
       });
       const result = await perspective.analyze({
         comment: { text },
@@ -31,7 +32,6 @@ export default class CommentController extends Component {
       res = parseInt(
         result?.attributeScores?.TOXICITY?.summaryScore?.value * 100
       );
-      console.log(JSON.stringify(result, null, 2));
     }
     this.errors = res;
     return res;
