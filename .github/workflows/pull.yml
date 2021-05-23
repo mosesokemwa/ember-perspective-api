@@ -4,8 +4,6 @@ on:
     types: [opened, reopened, synchronize, labeled, closed]
   pull_request_target:
     types: [opened, reopened, synchronize, labeled, closed]
-  push:
-    branches: [ main ]
 
 jobs:
   heroku-review-application:
